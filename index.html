@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> Rock Paper Scizzors BAYBEEE</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body> 
+<script>
+
+    //Below is a function to generate a random value for the computerPlayer between R, P, and S//
+function computerPlay() {
+    let r = Math.floor(Math.random()*100);
+    console.log(r);
+    if (r < 33) {
+        console.log("Rock!")
+        return "Rock!";
+    } else if (r < 66) {
+        console.log("Paper!")
+        return "Paper!";
+    } else if (r > 67) {
+        console.log("Scizzors")
+        return "Scizzors";
+    }
+}
+
+//Below is a function to play one round of RPS and say which cases would win or lose//
+
+function oneRound(playerSelection, computerSelection) {
+    //let playerSelection = player.toLowerCase();
+    //let computerSelection = computer.toLowerCase();
+    console.log("You picked " + playerSelection);
+    console.log("The computer picked " + computerSelection);
+    if (playerSelection == computerSelection) {
+        console.log("Tie game! Try again!")
+        return "Tie";
+    } else if (playerSelection == "Rock" && computerSelection == "Scizzors") {
+        console.log("You win! " + playerSelection + " beats " + computerSelection)
+        return "Win";
+    } else if (playerSelection == "Scizzors" && computerSelection == "Paper") {
+        console.log("You win! " + playerSelection + " beats " + computerSelection)
+        return "Win";
+    } else if (playerSelection == "Paper" && computerSelection == "Rock") {
+        console.log("You win! " + playerSelection + " beats " + computerSelection)
+        return "Win";
+    } else console.log ("You Lose! " + computerSelection + " beats " + playerSelection)
+    return "Lose"
+}
+
+//Can I write a loop that counts up to 5//
+
+for (let i = 0; i < 5; i++) {
+    console.log("The counter is on " + (i+1) + " And now we are going to play round "
+     + (i+1) + " of this game.")
+     if (i < 5) {
+         oneRound("Rock","Paper");
+     }
+}
+
+
+
+</script>
+   
+
+</body>
+</html>
