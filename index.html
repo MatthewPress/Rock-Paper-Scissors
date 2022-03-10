@@ -2,26 +2,32 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title> Rock Paper Scizzors BAYBEEE</title>
+  <title> Rock Paper Scissors BAYBEEE</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body> 
 <script>
-
+  
+  
     //Below is a function to generate a random value for the computerPlayer between R, P, and S//
+    //It's not perfectly random matematically but it'll work for now//
+
 function computerPlay() {
     let r = Math.floor(Math.random()*100);
     console.log(r);
     if (r < 33) {
-        console.log("Rock!")
-        return "Rock!";
+        console.log("Rock")
+        return "Rock";
+        console.log("The value of x is " + x)
     } else if (r < 66) {
-        console.log("Paper!")
-        return "Paper!";
+        console.log("Paper")
+        return "Paper";
+        console.log("The value of x is " + x)
     } else if (r > 67) {
-        console.log("Scizzors")
-        return "Scizzors";
+        console.log("Scissors")
+        return "Scissors";
+        console.log("The value of x is " + x)
     }
 }
 
@@ -29,16 +35,17 @@ function computerPlay() {
 
 function oneRound(playerSelection, computerSelection) {
     //let playerSelection = player.toLowerCase();
-    //let computerSelection = computer.toLowerCase();
+    //let computerSelection = computerPlay();
+    // Need to come back to this code later and fix the casing
     console.log("You picked " + playerSelection);
     console.log("The computer picked " + computerSelection);
     if (playerSelection == computerSelection) {
         console.log("Tie game! Try again!")
         return "Tie";
-    } else if (playerSelection == "Rock" && computerSelection == "Scizzors") {
+    } else if (playerSelection == "Rock" && computerSelection == "Scissors") {
         console.log("You win! " + playerSelection + " beats " + computerSelection)
         return "Win";
-    } else if (playerSelection == "Scizzors" && computerSelection == "Paper") {
+    } else if (playerSelection == "Scissors" && computerSelection == "Paper") {
         console.log("You win! " + playerSelection + " beats " + computerSelection)
         return "Win";
     } else if (playerSelection == "Paper" && computerSelection == "Rock") {
@@ -48,15 +55,23 @@ function oneRound(playerSelection, computerSelection) {
     return "Lose"
 }
 
-//Can I write a loop that counts up to 5//
+//This is a loop that plays the game 5 times.//
 
-for (let i = 0; i < 5; i++) {
-    console.log("The counter is on " + (i+1) + " And now we are going to play round "
-     + (i+1) + " of this game.")
+  function game5times() {
+    for (let i = 0; i < 5; i++) {
+     console.log("The counter is on " + (i+1) + " And now we are going to play round " + (i+1) + " of this game.")
      if (i < 5) {
-         oneRound("Rock","Paper");
+      let playerSelection = window.prompt("Type Rock Paper or Scissors & be sure to spell them correctly bc my code won't work otherwise. You're going to choose your selections for 5 rounds so this window will pop up 5 times in a row.");
+      console.log(oneRound(playerSelection, computerPlay()))
      }
-}
+    }
+  }
+
+  //This makes the 5 games showup
+  console.log(game5times())
+    
+
+
 
 
 
