@@ -11,7 +11,7 @@
   
   
     //Below is a function to generate a random value for the computerPlayer between R, P, and S//
-    //It's not perfectly random matematically but it'll work for now//
+    //It's not perfectly random mathematically but it'll work for now//
 
 function computerPlay() {
     let r = Math.floor(Math.random()*100);
@@ -34,9 +34,6 @@ function computerPlay() {
 //Below is a function to play one round of RPS and say which cases would win or lose//
 
 function oneRound(playerSelection, computerSelection) {
-    //let playerSelection = player.toLowerCase();
-    //let computerSelection = computerPlay();
-    // Need to come back to this code later and fix the casing
     console.log("You picked " + playerSelection);
     console.log("The computer picked " + computerSelection);
     if (playerSelection == computerSelection) {
@@ -57,26 +54,20 @@ function oneRound(playerSelection, computerSelection) {
 
 //This is a loop that plays the game 5 times.//
 
-  function game5times() {
-    for (let i = 0; i < 5; i++) {
+  function game3times() {
+    for (let i = 0; i < 3; i++) {
      console.log("The counter is on " + (i+1) + " And now we are going to play round " + (i+1) + " of this game.")
-     if (i < 5) {
-      let playerSelection = window.prompt("Type Rock Paper or Scissors & be sure to spell them correctly bc my code won't work otherwise. You're going to choose your selections for 5 rounds so this window will pop up 5 times in a row.");
+     if (i < 3) {
+      let playerSelection = window.prompt("Type Rock Paper or Scissors & be sure to spell them correctly bc my code won't work otherwise. You're going to choose your selections for 3 rounds so this window will pop up 3 times in a row.");
       console.log(oneRound(playerSelection, computerPlay()))
      }
     }
   }
 
   //This makes the 5 games showup
-  console.log(game5times())
-    
-
-
-
-
+  console.log(game3times())
 
 </script>
    
-
 </body>
 </html>
