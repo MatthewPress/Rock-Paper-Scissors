@@ -1,73 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title> Rock Paper Scissors BAYBEEE</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-
-<body> 
-<script>
-  
-  
-    //Below is a function to generate a random value for the computerPlayer between R, P, and S//
-    //It's not perfectly random mathematically but it'll work for now//
-
-function computerPlay() {
-    let r = Math.floor(Math.random()*100);
-    console.log(r);
-    if (r < 33) {
-        console.log("Rock")
-        return "Rock";
-        console.log("The value of x is " + x)
-    } else if (r < 66) {
-        console.log("Paper")
-        return "Paper";
-        console.log("The value of x is " + x)
-    } else if (r > 67) {
-        console.log("Scissors")
-        return "Scissors";
-        console.log("The value of x is " + x)
-    }
-}
-
-//Below is a function to play one round of RPS and say which cases would win or lose//
-
-function oneRound(playerSelection, computerSelection) {
-    console.log("You picked " + playerSelection);
-    console.log("The computer picked " + computerSelection);
-    if (playerSelection == computerSelection) {
-        console.log("Tie game! Try again!")
-        return "Tie";
-    } else if (playerSelection == "Rock" && computerSelection == "Scissors") {
-        console.log("You win! " + playerSelection + " beats " + computerSelection)
-        return "Win";
-    } else if (playerSelection == "Scissors" && computerSelection == "Paper") {
-        console.log("You win! " + playerSelection + " beats " + computerSelection)
-        return "Win";
-    } else if (playerSelection == "Paper" && computerSelection == "Rock") {
-        console.log("You win! " + playerSelection + " beats " + computerSelection)
-        return "Win";
-    } else console.log ("You Lose! " + computerSelection + " beats " + playerSelection)
-    return "Lose"
-}
-
-//This is a loop that plays the game 5 times.//
-
-  function game3times() {
-    for (let i = 0; i < 3; i++) {
-     console.log("The counter is on " + (i+1) + " And now we are going to play round " + (i+1) + " of this game.")
-     if (i < 3) {
-      let playerSelection = window.prompt("Type Rock Paper or Scissors & be sure to spell them correctly bc my code won't work otherwise. You're going to choose your selections for 3 rounds so this window will pop up 3 times in a row.");
-      console.log(oneRound(playerSelection, computerPlay()))
-     }
-    }
-  }
-
-  //This makes the 5 games showup
-  console.log(game3times())
-
-</script>
-   
-</body>
+<html lang="en-US" dir="ltr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css">
+        <title> Rock Paper Scissors BAYBEEE</title>
+    </head>
+    <body> 
+        <article>
+            <p>Player</p>
+            <p>Wins: <span class="player-wins_display"></span></p>
+        </article>
+        <section class="game_display">
+            <p>Choose:</p>
+            <button class="rock" value="rock">Rock</button>
+            <button class="paper" value="paper">Paper</button>
+            <button class="scissors" value="scissors">Scissors</button>
+            <p class="outcome_display"></p>
+        </section>
+        <article>
+            <p>Computer</p>
+            <p>Wins: <span class="computer-wins_display"></span></p>
+        </article>
+        <script src="Game.js"></script>
+        <script src="Player.js"></script>
+        <script src="script.js"></script>
+        <noscript>This game is not playable without JS</noscript>
+    </body>
 </html>
