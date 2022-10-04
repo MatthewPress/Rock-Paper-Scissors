@@ -38,6 +38,7 @@ function makeSelections(event) {
   console.log("Computer Selection:", computerSelection);
 
   const outcome = currentGame.determineOutcome(playerSelection, computerSelection);
+  console.log("Outcome:", outcome);
   displayOutcome(outcome, playerSelection, computerSelection);
 }
 
@@ -54,11 +55,10 @@ function randomSelection() {
 }
 
 function displayOutcome(outcome, playerSelection, computerSelection) {
-  winnerDisplay.innerText = "";
-  
+  console.log("Displayed Outcome:", outcome)
   if (!outcome) {
     winnerDisplay.innerText = "Tie game! Try again!";
-  } else if (outcome = 1) {
+  } else if (outcome === 1) {
     winnerDisplay.innerText = "You win! " + playerSelection + " beats " + computerSelection;
   } else { 
     winnerDisplay.innerText = "You Lose! " + computerSelection + " beats " + playerSelection;
